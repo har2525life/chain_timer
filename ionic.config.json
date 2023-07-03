@@ -1,0 +1,7 @@
+{
+  "name": "chain_timer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
