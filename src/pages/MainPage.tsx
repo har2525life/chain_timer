@@ -14,7 +14,7 @@ export default function MainPage() {
 
   return (
     <>
-      <Header />
+      <Header title="Chain Timer" />
       {display ? (
         <div className="flex flex-col justify-center items-center h-screen">
           <p className="">表示するタイマーがありません</p>

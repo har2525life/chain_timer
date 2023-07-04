@@ -8,7 +8,7 @@ export default function CreateTimerPage() {
   const { pathname } = useLocation();
   return (
     <>
-      <Header />
+      <Header title="Create Timer" />
       <div className="mx-10">
         <input
           type="text"

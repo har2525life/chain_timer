@@ -7,7 +7,7 @@ const AddTimerPage = () => {
   const { pathname } = useLocation();
   return (
     <>
-      <Header />
+      <Header title="Add Timer" />
       <div className="mx-8">
         <div className="flex flex-col mt-5">
           <label htmlFor="timer-select">タイマーの種類</label>
