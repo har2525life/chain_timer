@@ -33,9 +33,35 @@ export default function CreateButton({ page }: PageName) {
         className="p-10 bg-sky-200 rounded-full h-16 w-16 relative"
       >
         {page === "/add" ? (
-          <CheckmarkOutline color={"#00000"} height="20px" width="20px" />
+          <CheckmarkOutline
+            color={"#00000"}
+            height="32px"
+            width="32px"
+            style={{
+              "font-weight": "900",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              "-webkit-transform": "translate(-50%, -50%)",
+              "-ms-transform": "translate(-50%, -50%) ",
+            }}
+          />
         ) : (
-          <AddOutline color={"#00000"} height="20px" width="20px" />
+          <AddOutline
+            color={"#00000"}
+            height="32px"
+            width="32px"
+            style={{
+              "font-weight": "900",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              "-webkit-transform": "translate(-50%, -50%)",
+              "-ms-transform": "translate(-50%, -50%) ",
+            }}
+          />
         )}
       </button>
     </div>
