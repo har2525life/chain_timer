@@ -36,6 +36,7 @@ import CreateTimer from "./pages/CreateTimerPage";
 import AddTimer from "./pages/AddTimerPage";
 import LogPage from "./pages/LogPage";
 import SettingPage from "./pages/SettingPage";
+import TimerPage from "./pages/TimerPage";
 
 setupIonicReact();
 
@@ -58,6 +59,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/setting">
             <SettingPage />
+          </Route>
+          <Route exact path="/timer">
+            <TimerPage />
           </Route>
           <Route exact path="/">
             <Redirect to="/main" />
