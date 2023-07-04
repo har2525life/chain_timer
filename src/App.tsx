@@ -34,6 +34,8 @@ import "./theme/tailwind.css";
 import "./theme/variables.css";
 import CreateTimer from "./pages/CreateTimerPage";
 import AddTimer from "./pages/AddTimerPage";
+import LogPage from "./pages/LogPage";
+import SettingPage from "./pages/SettingPage";
 
 setupIonicReact();
 
@@ -51,20 +53,26 @@ const App: React.FC = () => (
           <Route path="/add">
             <AddTimer />
           </Route>
+          <Route path="/log">
+            <LogPage />
+          </Route>
+          <Route path="/setting">
+            <SettingPage />
+          </Route>
           <Route exact path="/">
             <Redirect to="/main" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="tab1" href="/main">
             <IonIcon aria-hidden="true" icon={home} />
             <IonLabel>HOME</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="tab2" href="/log">
             <IonIcon aria-hidden="true" icon={calendar} />
             <IonLabel>LOG</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="tab3" href="/setting">
             <IonIcon aria-hidden="true" icon={settings} />
             <IonLabel>SETTING</IonLabel>
           </IonTabButton>
