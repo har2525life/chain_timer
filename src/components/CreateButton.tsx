@@ -1,7 +1,5 @@
-import React from "react";
-import { IonIcon } from "@ionic/react";
-import { add } from "ionicons/icons";
 import { useHistory } from "react-router";
+import { CheckmarkOutline, AddOutline } from "react-ionicons";
 
 type PageName = {
   page: string;
@@ -34,7 +32,11 @@ export default function CreateButton({ page }: PageName) {
         onClick={transitionPage}
         className="p-10 bg-sky-200 rounded-full h-16 w-16 relative"
       >
-        <IonIcon aria-hidden="true" icon={add} className="text-center" />
+        {page === "/add" ? (
+          <CheckmarkOutline color={"#00000"} height="20px" width="20px" />
+        ) : (
+          <AddOutline color={"#00000"} height="20px" width="20px" />
+        )}
       </button>
     </div>
   );
