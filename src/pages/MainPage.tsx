@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import CreateButton from "../components/CreateButton";
-import { CaretForwardCircleOutline } from "react-ionicons";
+import { CaretForwardOutline } from "react-ionicons";
+import { useHistory, useLocation } from "react-router";
 
 export default function MainPage() {
   const [display, setDisplay] = useState(false);
+  const history = useHistory();
+  const location = useLocation();
+  console.log(location);
+  console.log(history);
+  const { pathname } = location;
+
   return (
     <>
       <Header />
@@ -19,10 +26,11 @@ export default function MainPage() {
             <div className="flex justify-between line p-10">
               <p className="text-2xl">歯磨き</p>
               <button className="h-10 w-10 bg-rose-200 rounded-full flex flex-col justify-center items-center text-xl">
-                <CaretForwardCircleOutline
-                  color={"#00000"}
-                  height="250px"
-                  width="250px"
+                <CaretForwardOutline
+                  color={"#fefefe"}
+                  height="30px"
+                  width="30px"
+                  style={{ marginLeft: "3px" }}
                 />
               </button>
             </div>
@@ -30,7 +38,7 @@ export default function MainPage() {
         </div>
       )}
 
-      <CreateButton />
+      <CreateButton page={pathname} />
     </>
   );
 }
