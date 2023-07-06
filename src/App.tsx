@@ -37,6 +37,7 @@ import AddTimer from "./pages/AddTimerPage";
 import LogPage from "./pages/LogPage";
 import SettingPage from "./pages/SettingPage";
 import TimerPage from "./pages/TimerPage";
+import SendMessage from "./pages/SendMessage";
 
 setupIonicReact();
 
@@ -62,6 +63,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/timer">
             <TimerPage />
+          </Route>
+          <Route exact path="/message">
+            <SendMessage />
           </Route>
           <Route exact path="/">
             <Redirect to="/main" />
