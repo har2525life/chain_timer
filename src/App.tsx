@@ -32,12 +32,12 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/tailwind.css";
 import "./theme/variables.css";
-import CreateTimer from "./pages/CreateTimerPage";
 import AddTimer from "./pages/AddTimerPage";
 import LogPage from "./pages/LogPage";
 import SettingPage from "./pages/SettingPage";
 import TimerPage from "./pages/TimerPage";
 import SendMessage from "./pages/SendMessage";
+import CreateHabitPage from "./pages/CreateHabitPage";
 
 setupIonicReact();
 
@@ -49,8 +49,8 @@ const App: React.FC = () => (
           <Route exact path="/main">
             <MainPage />
           </Route>
-          <Route exact path="/register">
-            <CreateTimer />
+          <Route exact path="/habit">
+            <CreateHabitPage />
           </Route>
           <Route path="/add">
             <AddTimer />
