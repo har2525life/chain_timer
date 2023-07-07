@@ -5,62 +5,71 @@ import { CaretForwardOutline } from "react-ionicons";
 import { useHistory, useLocation } from "react-router";
 import { IonPage, IonContent } from "@ionic/react";
 
+type Habit = {
+  name: string;
+  id: string;
+};
+
+type Routin = {
+  name: string;
+  id: string
+}
+
 export default function MainPage() {
-  const [routins, setRoutins] = useState<[]>([]);
-  // const [display, setDisplay] = useState(true);
+  // package
   const history = useHistory();
   const location = useLocation();
-  // console.log(location);
-  // console.log(history);
   const { pathname } = location;
 
-  const transitionPage = (path: string, name: string) => {
-    // console.log(path);
-    history.push({ pathname: `/${path}`, state: { name } });
+  const [habits, setHabits] = useState<Habit[]>([]);
+
+  const transitionPage = (path: string, routin: Routin) => {
+    history.push({ pathname: `/${path}`, state:  routin });
   };
 
   useEffect(() => {
     // console.log("useEffect");
-    const getItem = localStorage.getItem("routing");
-    console.log(getItem)
-    if (getItem === null) {
+    const getHabit = localStorage.getItem("routing");
+    // console.log(getHabit);
+    if (getHabit === null) {
       return;
     }
-    const parseGetItem = JSON.parse(getItem);
-    console.log(parseGetItem)
-    // console.log(parseGetItem[0].length);
-    if (parseGetItem[0].length === 0) {
-      setRoutins([]);
-    } else {
-      setRoutins(parseGetItem);
-    }
+    // console.log(getHabit);
+    const getHabitParse = JSON.parse(getHabit);
+    // if (getHabit === null) {
+    //   return;
+    // } else {
+    //   const getHabitParse = JSON.parse(getHabit);
+    // console.log(getHabitParse);
+    setHabits(getHabitParse);
+    // }
   }, [pathname]);
 
   return (
     <IonPage>
       <IonContent>
         <Header title="Chain Timer" />
-        {routins.length === 0 ? (
+        {habits.length === 0 ? (
           <div className="flex flex-col justify-center items-center h-screen">
             <p className="">表示するタイマーがありません</p>
             <p className="">早速タイマーを作成しましょう</p>
           </div>
         ) : (
           <div className="">
-            {routins.map((routin) => (
+            {habits.map((routin) => (
               <div
-                key={routin}
+                key={routin.id}
                 className="border-b"
-                onClick={() => transitionPage("register", routin)}
+                onClick={() => transitionPage("habit", routin)}
                 role="button"
               >
                 <div className="flex flex-col justify-center h-20">
                   <div className="flex justify-between line px-8">
-                    <p className="text-xl leading-10">{routin}</p>
+                    <p className="text-xl leading-10">{routin.name}</p>
                     <button
                       onClick={(e: React.MouseEvent) => {
                         e.stopPropagation();
-                        transitionPage("timer", routin);
+                        // transitionPage("timer", routin);
                       }}
                       className="z-10 h-10 w-10 bg-rose-200 rounded-full flex flex-col justify-center items-center text-xl"
                     >
