@@ -48,7 +48,7 @@ export default function MainPage() {
   return (
     <IonPage>
       <IonContent>
-        <Header title="Chain Timer" />
+        <Header title="Chain Timer Git Hub Action" />
         {habits.length === 0 ? (
           <div className="flex flex-col justify-center items-center h-screen">
             <p className="">表示するタイマーがありません</p>
