@@ -16,8 +16,9 @@ export default function SendMessage() {
     // console.log(event);
     // console.log("test");
     // const { name, type, email, description } = event;
+    console.log(event)
     await axios
-      .post("http://localhost:3000/slack/message", {
+      .post("https://xsqtl3f33i.execute-api.ap-northeast-1.amazonaws.com/test/slack/message", {
         data: event,
       })
       .then((response) => {
@@ -25,7 +26,7 @@ export default function SendMessage() {
       })
       .catch(async (error) => {
         // console.log(error)
-        await axios.post("http://localhost:3000/slack/error", {
+        await axios.post("https://xsqtl3f33i.execute-api.ap-northeast-1.amazonaws.com/test/slack/error", {
           data: error.message,
         });
       });
